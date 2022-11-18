@@ -1,0 +1,14 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= image_path('cinema.jpg') %> );">
+<%# <img src=<%= image_path('popcorn.jpeg')%>
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+<h1>List of my lists</h1>
+<% @lists.each do |list| %>
+<li><%= list.name %><%= link_to "Show this list", list %></li>
+
+<% end %>
+<%= link_to "Create new list", new_list_path %>
