@@ -1,14 +1,24 @@
 
-<h1>List#show</h1>
-<p>Find me in app/views/list/show.html.erb</p>
-<h2><%= @list.name %></h2>
-
-<% @list.bookmarks.each do |bookmark| %>
-  <li>Movie: <%= bookmark.movie.title %> -- comment: <%= bookmark.comment %></li>
+<h1 class=""><%= @list.name %></h2>
 
 
-<% end  %>
 
-<%= link_to "go home", lists_path %>
-<%= link_to "create bookmark", new_list_bookmark_path(@list) %>
-</div>
+<div class="container m-2">
+<%= link_to "add a movie", new_list_bookmark_path(@list) %>
+  <div class="cards">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-trip">
+      <img src="<%= bookmark.movie.poster_url %>" />
+      <div class="card-trip-infos">
+        <div>
+        <h2><%= bookmark.movie.title %> <%= bookmark.movie.rating %> <i class="fa-solid fa-star"></i></h2>
+
+          <p><%= bookmark.movie.overview %></p>
+
+        </div>
+        <%# <h2 class="card-trip-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+      </div>
+    </div>
+    <% end  %>
+  </div>

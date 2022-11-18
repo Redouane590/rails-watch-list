@@ -1,14 +1,26 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= image_path('cinema.jpg') %> );">
+<div class="banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= image_path('cinema.jpg') %> );">
 
   <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <h1 class="text-center">Save any kind of movie</h1>
+
+    <%# <a class="btn btn-flat" href="#">Apply now</a> %>
   </div>
 </div>
-<h1>List of my lists</h1>
-<% @lists.each do |list| %>
-<li><%= list.name %><%= link_to "Show this list", list %></li>
+<div>
 
-<% end %>
-<%= link_to "Create new list", new_list_path %>
+    <div class="container m-2">
+    <h2 class="text-center">My lists</h1><div class="text-center"><%= link_to "Create new list", new_list_path, class: "btn btn-primary m-3"  %></div>
+      <div class="cards">
+        <% @lists.each do |list| %>
+        <div class="card-category"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+           <%= link_to list.name, list, class: "bouton-tkt" %>
+        </div>
+
+
+        <% end %>
+      </div>
+
+    </div>
+</div>
